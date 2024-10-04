@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"wordpress-post.apiUrl": "https://geek-freaks.tech/wp-json/wp/v2",
+		"wordpress-post.authUser": "darktribe",
+		"wordpress-post.authPassword": "5xiI PULX Gz28 I8DR 3lPz ZZfs",
+		"editor.insertSpaces": true
+	  }
+}
