@@ -43,19 +43,7 @@ status: publish
 　ブックマークレットのコードは以下です。
 
 ```
-javascript:(function(){const name=document.getElementById("productTitle").textContent.trim();const shortlinkEl=document.getElementById("amzn-ss-text-shortlink-textarea");let link;if(shortlinkEl){link=shortlinkEl.value}
-if(!link){alert("アソシエイトツールバーから「リンク生成 > テキスト」をクリックしてポップオーバーを表示してください");return}
-const imgTagWrapper=document.getElementById("imgTagWrapperId");const imgTag=imgTagWrapper.getElementsByTagName("img")[0];const thumbnailSrc=imgTag.getAttribute("src");const priceEl=document.getElementById("apex_offerDisplay_desktop");const priceHtmlCollection=priceEl.getElementsByClassName("a-price-whole");const price=priceHtmlCollection[0].textContent;const el=document.createElement("textarea");el.textContent=`
-<div style="border: 1px solid #aaa; padding: 10px; overflow: hidden;">
-  <a href="${link}" target="_blank" rel="noreferrer noopener nofollow" style="text-decoration: none; color: inherit;">
-    <img src="${thumbnailSrc}" alt="${name}" style="width: 200px; float: right; margin-left: 10px; margin-bottom: 5px;" />
-    <div style="font-size: 14px; color: #333;">${name}</div>
-    <div style="font-size: 14px; color: #000; font-weight: bold; margin-top: 4px;">${price} 円</div>
-    <div style="display: inline-block; background: #fdaf17; color: #111; padding: 6px 12px; margin-top: 8px; border-radius: 8px;">
-      Amazonで購入
-    </div>
-  </a>
-</div>`;document.body.appendChild(el);el.select();document.execCommand("copy");el.remove()})()
+javascript:(function(){try{const titleEl=document.getElementById("productTitle");if(!titleEl){alert("商品タイトルが見つかりません。商品ページで実行してください。");return}const name=titleEl.textContent.trim();const shortlinkEl=document.getElementById("amzn-ss-text-shortlink-textarea");let link;if(shortlinkEl){link=shortlinkEl.value.trim()}if(!link){alert("アソシエイトツールバーから「リンク生成 > テキスト」をクリックしてポップオーバーを表示してください");return}let thumbnailSrc="";const imgTagWrapper=document.getElementById("imgTagWrapperId");if(imgTagWrapper){const imgTag=imgTagWrapper.getElementsByTagName("img")[0];if(imgTag){thumbnailSrc=imgTag.getAttribute("src")}}if(!thumbnailSrc){const mainImg=document.querySelector("#landingImage, .a-dynamic-image");if(mainImg){thumbnailSrc=mainImg.getAttribute("src")||mainImg.getAttribute("data-src")}}let price="";const priceSelectors=[".a-price-whole",".a-price .a-offscreen","#apex_offerDisplay_desktop .a-price-whole",".a-price-range .a-price-whole"];for(const selector of priceSelectors){const priceEl=document.querySelector(selector);if(priceEl){price=priceEl.textContent.trim().replace(/[,\.]/g,"");break}}const htmlCode=`<div style="border: 1px solid #aaa; padding: 10px; overflow: hidden;"><a href="${link}" target="_blank" rel="noreferrer noopener nofollow" style="text-decoration: none; color: inherit;">${thumbnailSrc?`<img src="${thumbnailSrc}" alt="${name}" style="width: 200px; float: right; margin-left: 10px; margin-bottom: 5px;" />`:''}<div style="font-size: 14px; color: #333;">${name}</div>${price?`<div style="font-size: 14px; color: #000; font-weight: bold; margin-top: 4px;">¥${price}</div>`:''}<div style="display: inline-block; background: #fdaf17; color: #111; padding: 6px 12px; margin-top: 8px; border-radius: 8px;">Amazonで購入</div></a></div>`;function fallbackCopy(text){const el=document.createElement("textarea");el.value=text;el.style.position="fixed";el.style.left="-999999px";el.style.top="-999999px";document.body.appendChild(el);el.select();el.setSelectionRange(0,99999);try{const successful=document.execCommand("copy");if(successful){alert("HTMLをクリップボードにコピーしました")}else{alert("コピーに失敗しました")}}catch(err){alert("コピーに失敗しました: "+err)}finally{document.body.removeChild(el)}}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(htmlCode).then(function(){alert("HTMLをクリップボードにコピーしました")}).catch(function(){fallbackCopy(htmlCode)})}else{fallbackCopy(htmlCode)}}catch(error){alert("エラーが発生しました: "+error.message)}})();
 ```
 
 　長いですが登録できるはずです。
