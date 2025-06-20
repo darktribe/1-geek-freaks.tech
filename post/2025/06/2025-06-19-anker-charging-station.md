@@ -13,7 +13,7 @@ status: publish
 　基本的には充電器の塊なので6000円近くの価格がするのは結構高い印象もあるんですが、今ではちょっと凝った電源タップが3000円くらいするのを考えるとむしろ妥当を通り越してやすいんじゃないかと思っています。
 　後でもアフィリエイトを入れますが、先にアフィリエイトを入れておきます。
 
-[html]
+<!--!
 <div style="border: 1px solid #aaa; padding: 10px; overflow: hidden;">
   <a href="https://amzn.to/4lhp5nh" target="_blank" rel="noreferrer noopener nofollow" style="text-decoration: none; color: inherit;">
     <img src="https://m.media-amazon.com/images/I/51SMaCqi5ZL.AC_SY679.jpg" alt="Anker Charging Station" style="width: 200px; float: right; margin-left: 10px; margin-bottom: 5px;" />
@@ -22,7 +22,7 @@ status: publish
     <div style="display: inline-block; background: #fdaf17; color: #111; padding: 6px 12px; margin-top: 8px; border-radius: 8px;">Amazonで購入</div>
   </a>
 </div>
-[/html]
+!-->
 
 
 
@@ -78,7 +78,7 @@ status: publish
 　ですので、皆さんにもお勧めします。
 
 　という訳でもう一度アフィリエイトを貼ります。
-[html]
+<!--!
 <div style="border: 1px solid #aaa; padding: 10px; overflow: hidden;">
   <a href="https://amzn.to/4lhp5nh" target="_blank" rel="noreferrer noopener nofollow" style="text-decoration: none; color: inherit;">
     <img src="https://m.media-amazon.com/images/I/51SMaCqi5ZL.AC_SY679.jpg" alt="Anker Charging Station" style="width: 200px; float: right; margin-left: 10px; margin-bottom: 5px;" />
@@ -87,6 +87,6 @@ status: publish
     <div style="display: inline-block; background: #fdaf17; color: #111; padding: 6px 12px; margin-top: 8px; border-radius: 8px;">Amazonで購入</div>
   </a>
 </div>
-[/html]
+!-->
 
 　非常に良い製品なのでお勧めです。
