@@ -167,7 +167,7 @@ status: publish
 ### GitHubでゆーさんのContrailsをForkする
 　今GitHubのダッシュボードにいるので、同じブラウザの別ウィンドを開いて「[https://github.com/usounds/Contrails](https://github.com/usounds/Contrails)」を開きます。これはゆーさんのForkしたリポジトリです。
 　このForkのContrailsは問題なく動くので、ここからForkして自分用のフィードを作ります。
-　今<!--!「https://github.com/usounds/Contrails」!-->にいるのを確認し、画面左上の「Fork」をクリックします。
+　今「https://github.com/usounds/Contrails」にいるのを確認し、画面左上の「Fork」をクリックします。
 ![Forkをクリックする](img/contrails-013.png)
 　すると画面が切り替わって「Create a new fork」の画面になるので、画面右下にある「Create fork」のボタンをクリックします。
 　すると自分のダッシュボードに移動し、Contrailsが選択された状態になるので、Forkは終了です。
@@ -190,7 +190,7 @@ status: publish
 　切り替わった画面、下まで下がって「Repository variables」の中の「new repository variable」をクリックします。
 　ここでは3つの項目を設定します。
 
-　まず1つ目に、「Name *」に「BLUESKY_HANDLE」を、「Value *」には先程入手したアプリパスワードを入力して「Add variable」をクリックします。
+　まず1つ目に、「Name *」に「BLUESKY_HANDLE」を、「Value *」にはBlueSkyのユーザー名を入力して「Add variable」をクリックします。
 　切り替わった画面、下にスクロールして「Repository variables」の横にある「new repository variable」をクリックします。
 　次に「Name *」に「CLOUDFLARE_ACCOUNT_ID」を、「Value *」には先程入手したCloudFlareのアカウントIDを入力して「Add variable」をクリックします。
 　切り替わった画面、下にスクロールして「Repository variables」の横にある「new repository variable」をクリックします。
